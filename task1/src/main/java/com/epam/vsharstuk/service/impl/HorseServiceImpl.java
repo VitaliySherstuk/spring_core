@@ -9,6 +9,7 @@ public class HorseServiceImpl implements HorseService {
 
     @Override
     public List<Horse> getAllHorses() {
+
         return null;
     }
 

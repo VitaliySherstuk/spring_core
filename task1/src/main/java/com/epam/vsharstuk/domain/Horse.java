@@ -1,9 +1,11 @@
 package com.epam.vsharstuk.domain;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class Horse {
 
     private String name;
-    private Character sex;
     private Integer age;
     private Breed breed;
     private Rider rider;
@@ -15,14 +17,6 @@ public class Horse {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public Character getSex() {
-        return sex;
-    }
-
-    public void setSex(Character sex) {
-        this.sex = sex;
     }
 
     public Integer getAge() {
@@ -55,5 +49,10 @@ public class Horse {
 
     public void setSpeed(Integer speed) {
         this.speed = speed;
+    }
+
+    @Override
+    public String toString() {
+        return new ReflectionToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).toString();
     }
 }

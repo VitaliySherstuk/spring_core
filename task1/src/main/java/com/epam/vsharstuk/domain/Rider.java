@@ -1,5 +1,8 @@
 package com.epam.vsharstuk.domain;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 public class Rider {
 
     private String name;
@@ -37,5 +40,10 @@ public class Rider {
 
     public void setSex(Character sex) {
         this.sex = sex;
+    }
+
+    @Override
+    public String toString() {
+        return new ReflectionToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).toString();
     }
 }

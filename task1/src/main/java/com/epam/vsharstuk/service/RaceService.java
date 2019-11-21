@@ -1,10 +1,8 @@
 package com.epam.vsharstuk.service;
 
-import com.epam.vsharstuk.domain.Horse;
-
-import java.util.List;
+import com.epam.vsharstuk.domain.Race;
 
 public interface RaceService {
 
-    List<Horse> getRandomRaseList();
+    Race getRace();
 }

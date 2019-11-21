@@ -1,0 +1,113 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="riderA" class="com.epam.vsharstuk.domain.Rider">
+        <property name="name" value="${riderNameA}" />
+        <property name="age" value="${ageRiderA}"/>
+        <property name="sex" value="${sexRiderA}" />
+        <property name="horse" ref="horseA" />
+    </bean>
+
+    <bean id="riderB" class="com.epam.vsharstuk.domain.Rider">
+        <property name="name" value="${riderNameB}" />
+        <property name="age" value="${ageRiderB}" />
+        <property name="sex" value="${sexRiderB}" />
+        <property name="horse" ref="horseB" />
+    </bean>
+
+    <bean id="riderC" class="com.epam.vsharstuk.domain.Rider">
+        <property name="name" value="${riderNameC}" />
+        <property name="age" value="${ageRiderC}" />
+        <property name="sex" value="${sexRiderC}" />
+        <property name="horse" ref="horseC" />
+    </bean>
+
+    <bean id="riderD" class="com.epam.vsharstuk.domain.Rider">
+        <property name="name" value="${riderNameD}" />
+        <property name="age" value="${ageRiderD}" />
+        <property name="sex" value="${sexRiderD}" />
+        <property name="horse" ref="horseD" />
+    </bean>
+
+    <bean id="riderE" class="com.epam.vsharstuk.domain.Rider">
+        <property name="name" value="${riderNameE}" />
+        <property name="age" value="${ageRiderE}" />
+        <property name="sex" value="${sexRiderE}" />
+        <property name="horse" ref="horseE" />
+    </bean>
+
+    <bean id="riderF" class="com.epam.vsharstuk.domain.Rider">
+        <property name="name" value="${riderNameF}" />
+        <property name="age" value="${ageRiderF}" />
+        <property name="sex" value="${sexRiderF}" />
+        <property name="horse" ref="horseF" />
+    </bean>
+
+    <bean id="riderG" class="com.epam.vsharstuk.domain.Rider">
+        <property name="name" value="${riderNameG}" />
+        <property name="age" value="${ageRiderG}" />
+        <property name="sex" value="${sexRiderG}" />
+        <property name="horse" ref="horseG" />
+    </bean>
+
+    <bean id="riderH" class="com.epam.vsharstuk.domain.Rider">
+        <property name="name" value="${riderNameH}" />
+        <property name="age" value="${ageRiderH}" />
+        <property name="sex" value="${sexRiderH}" />
+        <property name="horse" ref="horseH" />
+    </bean>
+
+    <bean id="riderI" class="com.epam.vsharstuk.domain.Rider">
+        <property name="name" value="${riderNameI}" />
+        <property name="age" value="${ageRiderI}" />
+        <property name="sex" value="${sexRiderI}" />
+        <property name="horse" ref="horseI" />
+    </bean>
+
+    <bean id="riderJ" class="com.epam.vsharstuk.domain.Rider">
+        <property name="name" value="${riderNameJ}" />
+        <property name="age" value="${ageRiderJ}" />
+        <property name="sex" value="${sexRiderJ}" />
+        <property name="horse" ref="horseJ" />
+    </bean>
+
+    <bean id="riderK" class="com.epam.vsharstuk.domain.Rider">
+        <property name="name" value="${riderNameK}" />
+        <property name="age" value="${ageRiderK}" />
+        <property name="sex" value="${sexRiderK}" />
+        <property name="horse" ref="horseK" />
+    </bean>
+
+    <bean id="riderL" class="com.epam.vsharstuk.domain.Rider">
+        <property name="name" value="${riderNameL}" />
+        <property name="age" value="${ageRiderL}" />
+        <property name="sex" value="${sexRiderL}" />
+        <property name="horse" ref="horseL" />
+    </bean>
+
+    <bean id="riderM" class="com.epam.vsharstuk.domain.Rider">
+        <property name="name" value="${riderNameM}" />
+        <property name="age" value="${ageRiderM}" />
+        <property name="sex" value="${sexRiderM}" />
+        <property name="horse" ref="horseM" />
+    </bean>
+
+    <bean id="riderN" class="com.epam.vsharstuk.domain.Rider">
+        <property name="name" value="${riderNameN}" />
+        <property name="age" value="${ageRiderN}" />
+        <property name="sex" value="${sexRiderN}" />
+        <property name="horse" ref="horseN" />
+    </bean>
+
+    <bean id="riderO" class="com.epam.vsharstuk.domain.Rider">
+        <property name="name" value="${riderNameO}" />
+        <property name="age" value="${ageRiderO}" />
+        <property name="sex" value="${sexRiderO}" />
+        <property name="horse" ref="horseO" />
+    </bean>
+
+</beans>

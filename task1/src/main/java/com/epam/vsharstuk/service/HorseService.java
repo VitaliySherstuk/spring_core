@@ -7,8 +7,6 @@ import java.util.List;
 public interface HorseService {
 
     List<Horse> getAllHorses();
-
-    Horse findHorseByRider();
-
-    Horse findHorseByHorseName();
+    List<Horse> getRandomHourseList();
+    Horse findHorseByHorseName(String name);
 }

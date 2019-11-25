@@ -3,14 +3,10 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="dateFormat" class="java.text.SimpleDateFormat">
-        <constructor-arg value="yyyy-MMM-dd hh:mm:ss"/>
-    </bean>
-
     <bean id="raceA" class="com.epam.vsharstuk.domain.Race">
         <property name="date">
-            <bean factory-bean="dateFormat" factory-method="parse">
-                <constructor-arg value="2019-DEC-9 09:00:00:000"/>
+            <bean class="java.time.LocalDate" factory-method="parse">
+                <constructor-arg value="2019-11-25"/>
             </bean>
         </property>
         <property name="raceNumber" value="1"/>
@@ -19,8 +15,8 @@
 
     <bean id="raceB" class="com.epam.vsharstuk.domain.Race">
         <property name="date">
-            <bean factory-bean="dateFormat" factory-method="parse">
-                <constructor-arg value="2019-DEC-10 09:00:00:000"/>
+            <bean class="java.time.LocalDate" factory-method="parse">
+                <constructor-arg value="2019-11-26"/>
             </bean>
         </property>
         <property name="raceNumber" value="2"/>

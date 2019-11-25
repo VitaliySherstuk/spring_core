@@ -12,6 +12,9 @@ http://www.springframework.org/schema/context/spring-context.xsd">
     <import resource="classpath:beans-horses.xml"/>
     <import resource="classpath:beans-riders.xml"/>
     <import resource="classpath:beans-breeds.xml"/>
+    <import resource="classpath:beans-races.xml"/>
 
-
+    <bean id="horsesService" class="com.epam.vsharstuk.service.impl.HorseServiceImpl"/>
+    <bean id="raceService" class="com.epam.vsharstuk.service.impl.RaceServiceImpl"/>
+    <bean id="emulationService" class="com.epam.vsharstuk.service.impl.EmulationServiceImpl"/>
 </beans>

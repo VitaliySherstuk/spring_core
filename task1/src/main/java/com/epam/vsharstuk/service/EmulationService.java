@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface EmulationService {
 
-    List<Horse> start(Race race);
+    void start();
 }

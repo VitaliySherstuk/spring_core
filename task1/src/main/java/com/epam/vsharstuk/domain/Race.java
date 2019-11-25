@@ -1,5 +1,8 @@
 package com.epam.vsharstuk.domain;
 
+import org.apache.commons.lang3.builder.ReflectionToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -42,5 +45,10 @@ public class Race {
 
     public void setHorses(List<Horse> horses) {
         this.horses = horses;
+    }
+
+    @Override
+    public String toString() {
+        return new ReflectionToStringBuilder(this, ToStringStyle.SHORT_PREFIX_STYLE).toString();
     }
 }

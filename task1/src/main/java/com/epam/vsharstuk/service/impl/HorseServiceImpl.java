@@ -2,24 +2,40 @@ package com.epam.vsharstuk.service.impl;
 
 import com.epam.vsharstuk.domain.Horse;
 import com.epam.vsharstuk.service.HorseService;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
-public class HorseServiceImpl implements HorseService {
+public class HorseServiceImpl implements HorseService, ApplicationContextAware {
+
+    private ApplicationContext applicationContext;
 
     @Override
     public List<Horse> getAllHorses() {
-
-        return null;
+        return new ArrayList(applicationContext.getBeansOfType(Horse.class).values());
     }
 
     @Override
-    public Horse findHorseByRider() {
-        return null;
+    public List<Horse> getRandomHourseList() {
+        List<Horse> horses = this.getAllHorses();
+        Collections.shuffle(horses);
+        return horses.subList(0, 7);
     }
 
     @Override
-    public Horse findHorseByHorseName() {
-        return null;
+    public Horse findHorseByHorseName(String name) {
+        return getAllHorses().stream()
+                .filter(horse -> horse.getRider().equals(name))
+                .findFirst()
+                .get();
     }
+
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
+    }
+
 }

@@ -1,13 +1,14 @@
 package com.epam.vsharstuk;
 
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Runner {
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        ConfigurableApplicationContext context = new AnnotationConfigApplicationContext("com.epam.vsharstuk");
         Client client = context.getBean(Client.class);
         client.run();
+
     }
 }

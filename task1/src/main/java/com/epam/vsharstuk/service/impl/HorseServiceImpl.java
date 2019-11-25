@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Service to manage herd.
+ */
 public class HorseServiceImpl implements HorseService, ApplicationContextAware {
 
     private ApplicationContext applicationContext;

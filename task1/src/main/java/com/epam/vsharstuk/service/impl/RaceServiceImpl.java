@@ -13,6 +13,9 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Service to manage race and calculate prise koeff for current race.
+ */
 public class RaceServiceImpl implements RaceService, ApplicationContextAware {
 
     private ApplicationContext applicationContext;

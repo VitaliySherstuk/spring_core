@@ -7,7 +7,11 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 
+/**
+ * Class to keep data about race.
+ */
 public class Race {
 
     private LocalDate date;
@@ -45,6 +49,23 @@ public class Race {
 
     public void setHorses(List<Horse> horses) {
         this.horses = horses;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Race race = (Race) o;
+        return raceNumber == race.raceNumber &&
+                Objects.equals(date, race.date) &&
+                Objects.equals(place, race.place) &&
+                Objects.equals(horses, race.horses);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(date, raceNumber, place, horses);
     }
 
     @Override

@@ -15,6 +15,9 @@ import java.util.Optional;
 import java.util.Scanner;
 import java.util.stream.IntStream;
 
+/**
+ * Class to emulate race.
+ */
 public class EmulationServiceImpl implements EmulationService, ApplicationContextAware {
 
     private static final int COUNT_ROUND = 5;

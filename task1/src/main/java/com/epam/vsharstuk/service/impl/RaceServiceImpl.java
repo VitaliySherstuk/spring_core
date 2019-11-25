@@ -4,8 +4,10 @@ import com.epam.vsharstuk.domain.Horse;
 import com.epam.vsharstuk.domain.Race;
 import com.epam.vsharstuk.service.RaceService;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -16,13 +18,17 @@ import java.util.Optional;
 /**
  * Service to manage race and calculate prise koeff for current race.
  */
+@Service
 public class RaceServiceImpl implements RaceService, ApplicationContextAware {
+
+    @Autowired
+    private HorseServiceImpl horseService;
 
     private ApplicationContext applicationContext;
 
     @Override
     public Race getRace() {
-        List<Horse> horses = applicationContext.getBean(HorseServiceImpl.class).getRandomHourseList();
+        List<Horse> horses = horseService.getRandomHorseList();
         Optional<Race> currentRaceOptional = getCurrentRace();
         Race currentRace = currentRaceOptional.isPresent() ? currentRaceOptional.get() : null;
 

@@ -5,6 +5,7 @@ import com.epam.vsharstuk.service.HorseService;
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,6 +14,7 @@ import java.util.List;
 /**
  * Service to manage herd.
  */
+@Service
 public class HorseServiceImpl implements HorseService, ApplicationContextAware {
 
     private ApplicationContext applicationContext;
@@ -23,7 +25,7 @@ public class HorseServiceImpl implements HorseService, ApplicationContextAware {
     }
 
     @Override
-    public List<Horse> getRandomHourseList() {
+    public List<Horse> getRandomHorseList() {
         List<Horse> horses = this.getAllHorses();
         Collections.shuffle(horses);
         return horses.subList(0, 7);

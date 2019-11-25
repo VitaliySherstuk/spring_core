@@ -5,8 +5,10 @@ import com.epam.vsharstuk.domain.Race;
 import com.epam.vsharstuk.service.EmulationService;
 import com.epam.vsharstuk.service.RaceService;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
@@ -18,14 +20,16 @@ import java.util.stream.IntStream;
 /**
  * Class to emulate race.
  */
-public class EmulationServiceImpl implements EmulationService, ApplicationContextAware {
+@Service
+public class EmulationServiceImpl implements EmulationService {
+
+    @Autowired
+    private RaceServiceImpl raceService;
 
     private static final int COUNT_ROUND = 5;
-    private ApplicationContext applicationContext;
 
     @Override
     public void start() {
-        RaceService raceService = applicationContext.getBean(RaceServiceImpl.class);
         Race race = raceService.getRace();
 
         if (race == null) {
@@ -74,7 +78,7 @@ public class EmulationServiceImpl implements EmulationService, ApplicationContex
         Optional<Map.Entry<String, Integer>> betEntry = bet.entrySet().stream().findFirst();
         int betValue = betEntry.isPresent() ? betEntry.get().getValue() : 0;
         boolean isWinner = bet.containsKey(participants.get(0).getName());
-        double prise = getPrise(betValue, applicationContext.getBean(RaceServiceImpl.class).getPriseKoeff(participants), isWinner);
+        double prise = getPrise(betValue, raceService.getPriseKoeff(participants), isWinner);
         System.out.println("Prise: " + prise + "$");
 
     }
@@ -92,7 +96,4 @@ public class EmulationServiceImpl implements EmulationService, ApplicationContex
         return Collections.singletonMap(nameHorse, bet);
     }
 
-    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-        this.applicationContext = applicationContext;
-    }
 }

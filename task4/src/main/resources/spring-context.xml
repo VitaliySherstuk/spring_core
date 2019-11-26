@@ -1,0 +1,36 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="beanA" class="com.epam.vsharstuk.domain.BeanA">
+        <property name="firstField" value="First_field_For_beanA"/>
+    </bean>
+
+    <bean id="beanB" class="com.epam.vsharstuk.domain.BeanB">
+        <constructor-arg ref="beanA"/>
+    </bean>
+
+    <!--It is singletone-->
+    <bean id="beanC" class="com.epam.vsharstuk.domain.BeanC">
+        <property name="beanD" ref="beanD"/>
+        <property name="nameBeanC" value="NAME_BEAN_C"/>
+    </bean>
+
+    <!--It is prototype-->
+    <bean id="beanD" class="com.epam.vsharstuk.domain.BeanD" scope="prototype">
+        <property name="nameBeanD" value="NAME_BEAN_D"/>
+    </bean>
+
+    <bean id="beanCLookUp" class="com.epam.vsharstuk.domain.BeanC">
+        <lookup-method name="getBeanDByLookUpMethod" bean="beanD"/>
+        <property name="nameBeanC" value="NAME_BEAN_C_LOOK_UP"/>
+    </bean>
+
+    <bean id="beanE" class="com.epam.vsharstuk.domain.BeanE">
+        <property name="nameBeanE" value="bean_name_e"/>
+        <replaced-method name="getNameBeanEInUpperCase" replacer="replacer"/>
+    </bean>
+
+    <bean id="replacer" class="com.epam.vsharstuk.BeanEMethodReplacer"/>
+</beans>

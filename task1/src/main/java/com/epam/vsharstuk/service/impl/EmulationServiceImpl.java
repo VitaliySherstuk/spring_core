@@ -3,11 +3,7 @@ package com.epam.vsharstuk.service.impl;
 import com.epam.vsharstuk.domain.Horse;
 import com.epam.vsharstuk.domain.Race;
 import com.epam.vsharstuk.service.EmulationService;
-import com.epam.vsharstuk.service.RaceService;
-import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.ApplicationContextAware;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;

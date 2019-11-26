@@ -1,0 +1,25 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="raceA" class="com.epam.vsharstuk.domain.Race">
+        <property name="date">
+            <bean class="java.time.LocalDate" factory-method="parse">
+                <constructor-arg value="2019-11-25"/>
+            </bean>
+        </property>
+        <property name="raceNumber" value="1"/>
+        <property name="place" value="Minsk"/>
+    </bean>
+
+    <bean id="raceB" class="com.epam.vsharstuk.domain.Race">
+        <property name="date">
+            <bean class="java.time.LocalDate" factory-method="parse">
+                <constructor-arg value="2019-11-26"/>
+            </bean>
+        </property>
+        <property name="raceNumber" value="2"/>
+        <property name="place" value="Minsk"/>
+    </bean>
+</beans>
